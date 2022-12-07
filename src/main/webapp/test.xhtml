@@ -16,7 +16,22 @@
 
         <h1>#{testView.string}</h1>
         <h:form id="frmTest">
-            
+
+
+          <h:panelGroup style="display:block;" rendered="#{testView.rendered}">
+
+            <p:dataTable value="#{testView.countries}" var="row">
+              <p:columns var="columnHeader" value="#{testView.columns}">
+                <f:facet name="header">
+                  <h:outputText value="#{columnHeader}" />
+                </f:facet>
+                <h:outputText value="#{row}" />
+              </p:columns>
+            </p:dataTable>
+
+          </h:panelGroup>
+
+
         </h:form>
 
     </h:body>
